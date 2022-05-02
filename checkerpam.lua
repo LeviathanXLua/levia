@@ -89,25 +89,6 @@ TextHS.TextSize = 30
 TextHS.TextColor3 = Color3.new(255,255,255)
 TextHS.TextStrokeTransparency = 0
 
-function notiline(tonplamekuay)
-    url = "https://notify-api.line.me/api/notify"
-    
-    
-    local headers = {
-       ["Content-Type"] = "application/x-www-form-urlencoded",
-       ["Authorization"] = "Bearer " .. linetoken
-    }
-    
-    local abcdef = { 
-        Url = url,
-        Method = "POST",
-        Headers = headers,
-        Body = "message=" .. tonplamekuay
-    }
-    
-    local response = syn.request(abcdef)
-end
-
 function dfcheck()
     DFNAME = game:GetService("Players").LocalPlayer.Data.DevilFruit.Value
     --MAS = game:GetService("Players").LocalPlayer.Backpack[DFNAME].Level.Value
@@ -166,22 +147,15 @@ function moneycheck()
 end
 
 function FNcheck()
-    kaitunkeal = false
-    kaitunkom = false
-    kaikung = false
-    
     if DFFN and MNFN and YMFN and HSFN and BDFN then
-        kaitunkeal = true
         TextFN.Position = UDim2.new(0, 85, 0, 235)
         TextFN.TextColor3 = Color3.fromHex("#64ff64")
         TextFN.Text = "ไก่ตันเคียว"
     elseif DFFN and MNFN and YMFN and BDFN then
-        kaitunkom = true
         TextFN.Position = UDim2.new(0, 70, 0, 235)
         TextFN.TextColor3 = Color3.fromHex("#64ff64")
         TextFN.Text = "ไก่ตันคม"
     elseif DFFN and MNFN then
-        kaikung = true
         TextFN.Position = UDim2.new(0, 50, 0, 235)
         TextFN.TextColor3 = Color3.fromHex("#64ff64")
         TextFN.Text = "ไก่กัง"
@@ -191,36 +165,6 @@ function FNcheck()
         TextFN.Text = "โครตเน่า"
     end
     
-    if kaitunkeal and kaitunUneed == "keal and kom" then
-        kaitunformat = "ไก่ตันเคียว"
-    elseif kaitunkeal and kaitunUneed == "keal" then
-        kaitunformat = "ไก่ตันเคียว"
-    elseif kaitunkom and kaitunUneed == "keal and kom" then
-        kaitunformat = "ไก่ตันคม" 
-    elseif kaitunkom and kaitunUneed == "kom" then
-        kaitunformat = "ไก่ตันคม" 
-    elseif kaikung and kaitunUneed == "kung" then
-        kaitunformat = "ไก่กัง" 
-    end
-    
-    if kaitunkeal and kaitunUneed == "keal and kom" then
-        notiline(game.Players.LocalPlayer.Name .. "\n" .. kaitunformat .. "\nเสดแล้วน้าบปิดเกมให้แล้วด้วย")
-        game:Shutdown()
-    elseif kaitunkeal and kaitunUneed == "keal" then
-        notiline(game.Players.LocalPlayer.Name .. "\n" .. kaitunformat .. "\nเสดแล้วน้าบปิดเกมให้แล้วด้วย")
-        game:Shutdown()
-    elseif kaitunkom and kaitunUneed == "keal and kom" then
-        notiline(game.Players.LocalPlayer.Name .. "\n" .. kaitunformat .. "\nเสดแล้วน้าบปิดเกมให้แล้วด้วย")
-        game:Shutdown()
-    elseif kaitunkom and kaitunUneed == "kom" then
-        notiline(game.Players.LocalPlayer.Name .. "\n" .. kaitunformat .. "\nเสดแล้วน้าบปิดเกมให้แล้วด้วย")
-        game:Shutdown()
-    elseif kaikung and kaitunUneed == "kung" then
-        notiline(game.Players.LocalPlayer.Name .. "\n" .. kaitunformat .. "\nเสดแล้วน้าบปิดเกมให้แล้วด้วย")
-        game:Shutdown()
-    end
-end
-
 function Refresh()
     TextDF.Text = ""
     TextDF.Position = UDim2.new(0, 100, 0, 130)
