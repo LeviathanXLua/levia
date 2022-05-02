@@ -164,6 +164,7 @@ function FNcheck()
         TextFN.TextColor3 = Color3.fromHex("#ff3232")
         TextFN.Text = "โครตเน่า"
     end
+end
     
 function Refresh()
     TextDF.Text = ""
