@@ -24,72 +24,17 @@ Text.TextSize = 25
 Text.TextColor3 = Color3.new(255,255,255)
 Text.TextStrokeTransparency = 0
 
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextDF = Instance.new(className, parent)
-
---setting TextLabel
-TextDF.Name = "TextDF"
-TextDF.TextSize = 30
-TextDF.TextStrokeTransparency = 0
-
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextMN = Instance.new(className, parent)
-
---setting TextLabel
-TextMN.Name = "TextMN"
-TextMN.TextSize = 30
-TextMN.TextColor3 = Color3.new(255,255,255)
-TextMN.TextStrokeTransparency = 0
-
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextFN = Instance.new(className, parent)
-
---setting TextLabel
-TextFN.Name = "TextFN"
-TextFN.TextSize = 30
-TextFN.TextColor3 = Color3.new(255,255,255)
-TextFN.TextStrokeTransparency = 0
-
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextYM = Instance.new(className, parent)
-
---setting TextLabel
-TextYM.Name = "TextYM"
-TextYM.TextSize = 30
-TextYM.TextColor3 = Color3.new(255,255,255)
-TextYM.TextStrokeTransparency = 0
-
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextBD = Instance.new(className, parent)
-
---setting TextLabel
-TextBD.Name = "TextBD"
-TextBD.TextSize = 30
-TextBD.TextColor3 = Color3.new(255,255,255)
-TextBD.TextStrokeTransparency = 0
-
---create TextLabel
-local className = "TextLabel"
-local parent = game.CoreGui.hehe
-local TextHS = Instance.new(className, parent)
-
---setting TextLabel
-TextHS.Name = "TextHS"
-TextHS.TextSize = 30
-TextHS.TextColor3 = Color3.new(255,255,255)
-TextHS.TextStrokeTransparency = 0
-
 function dfcheck()
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextDF = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextDF.Name = "TextDF"
+    TextDF.TextSize = 30
+    TextDF.TextStrokeTransparency = 0
+
     DFNAME = game:GetService("Players").LocalPlayer.Data.DevilFruit.Value
     --MAS = game:GetService("Players").LocalPlayer.Backpack[DFNAME].Level.Value
     print(DFNAME)
@@ -132,6 +77,17 @@ function dfcheck()
 end
 
 function moneycheck()
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextMN = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextMN.Name = "TextMN"
+    TextMN.TextSize = 30
+    TextMN.TextColor3 = Color3.new(255,255,255)
+    TextMN.TextStrokeTransparency = 0
+
     MONEY = game:GetService("Players").LocalPlayer.Data.Beli.Value
     if MONEY >= 15000000 then
         MNFN = true
@@ -146,26 +102,6 @@ function moneycheck()
     end
 end
 
-function FNcheck()
-    if DFFN and MNFN and YMFN and HSFN and BDFN then
-        TextFN.Position = UDim2.new(0, 85, 0, 235)
-        TextFN.TextColor3 = Color3.fromHex("#64ff64")
-        TextFN.Text = "ไก่ตันเคียว"
-    elseif DFFN and MNFN and YMFN and BDFN then
-        TextFN.Position = UDim2.new(0, 70, 0, 235)
-        TextFN.TextColor3 = Color3.fromHex("#64ff64")
-        TextFN.Text = "ไก่ตันคม"
-    elseif DFFN and MNFN then
-        TextFN.Position = UDim2.new(0, 50, 0, 235)
-        TextFN.TextColor3 = Color3.fromHex("#64ff64")
-        TextFN.Text = "ไก่กัง"
-    else
-        TextFN.Position = UDim2.new(0, 70, 0, 235)
-        TextFN.TextColor3 = Color3.fromHex("#ff3232")
-        TextFN.Text = "โครตเน่า"
-    end
-end
-    
 function Refresh()
     TextDF.Text = ""
     TextDF.Position = UDim2.new(0, 100, 0, 130)
@@ -186,28 +122,63 @@ function Refresh()
 end
 
 function checkitem()
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextYM = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextYM.Name = "TextYM"
+    TextYM.TextSize = 30
+    TextYM.TextColor3 = Color3.new(255,255,255)
+    TextYM.TextStrokeTransparency = 0
+
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextBD = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextBD.Name = "TextBD"
+    TextBD.TextSize = 30
+    TextBD.TextColor3 = Color3.new(255,255,255)
+    TextBD.TextStrokeTransparency = 0
+
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextHS = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextHS.Name = "TextHS"
+    TextHS.TextSize = 30
+    TextHS.TextColor3 = Color3.new(255,255,255)
+    TextHS.TextStrokeTransparency = 0
+
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextDD = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextDD.Name = "TextDD"
+    TextDD.TextSize = 50
+    TextDD.TextColor3 = Color3.new(255,255,255)
+    TextDD.TextStrokeTransparency = 0
+
     game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Visible = true
     wait(.2)
     
     now = game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Container.Current.ScrollingFrame.Frame
     inven = game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Container.Stored.ScrollingFrame.Frame
     
-    nowYAMA = now:FindFirstChild("Yama")
-    invenYAMA = inven:FindFirstChild("Yama")
-    
-    nowBUD = now:FindFirstChild("Buddy Sword")
-    invenBUD = inven:FindFirstChild("Buddy Sword")
-    
-    nowHSS = now:FindFirstChild("Hallow Scythe")
-    invenHSS = inven:FindFirstChild("Hallow Scythe")
-    
-    if nowYAMA then
+    if now:FindFirstChild("Yama") then
         print("Have Yama in hand")
         YMFN = true
         TextYM.Position = UDim2.new(0, 55, 0, 130)
         TextYM.TextColor3 = Color3.fromHex("#64ff64")
         TextYM.Text = "มียามะ"
-    elseif invenYAMA then
+    elseif inven:FindFirstChild("Yama") then
         print("Have Yama in inven")
         YMFN = true
         TextYM.Position = UDim2.new(0, 55, 0, 130)
@@ -221,13 +192,13 @@ function checkitem()
         TextYM.Text = "ไม่มียามะ"
     end
     
-    if nowBUD then
+    if now:FindFirstChild("Buddy Sword") then
         print("Have Buddy in hand")
         BDFN = true
         TextBD.Position = UDim2.new(0, 55, 0, 165)
         TextBD.TextColor3 = Color3.fromHex("#64ff64")
         TextBD.Text = "มีบัดดี้"
-    elseif invenBUD then
+    elseif inven:FindFirstChild("Buddy Sword") then
         print("Have Buddy in inven")
         BDFN = true
         TextBD.Position = UDim2.new(0, 55, 0, 165)
@@ -241,13 +212,13 @@ function checkitem()
         TextBD.Text = "ไม่บัดดี้"
     end
     
-    if nowHSS then
+    if now:FindFirstChild("Hallow Scythe") then
         print("Have Hallow in hand")
         HSFN = true
         TextHS.Position = UDim2.new(0, 55, 0, 200)
         TextHS.TextColor3 = Color3.fromHex("#64ff64")
         TextHS.Text = "มีเคียว"
-    elseif invenHSS then
+    elseif inven:FindFirstChild("Hallow Scythe") then
         print("Have Hallow in inven")
         HSFN = true
         TextHS.Position = UDim2.new(0, 55, 0, 200)
@@ -260,8 +231,45 @@ function checkitem()
         TextHS.TextColor3 = Color3.fromHex("#ff3232")
         TextHS.Text = "ไม่มีเคียว"
     end    
-    
+
+    if now:FindFirstChild("Dark Dagger") and inven:FindFirstChild("Dark Dagger") then
+        TextDD.Position = UDim2.new(0, 150, 0, 325)
+        TextDD.TextColor3 = Color3.fromHex("#64ff64")
+        TextDD.Text = "มีของดีไอสัส"
+    end
+
     game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Visible = false
+end
+
+function FNcheck()
+    --create TextLabel
+    local className = "TextLabel"
+    local parent = game.CoreGui.hehe
+    local TextFN = Instance.new(className, parent)
+
+    --setting TextLabel
+    TextFN.Name = "TextFN"
+    TextFN.TextSize = 30
+    TextFN.TextColor3 = Color3.new(255,255,255)
+    TextFN.TextStrokeTransparency = 0
+    
+    if DFFN and MNFN and YMFN and HSFN and BDFN then
+        TextFN.Position = UDim2.new(0, 85, 0, 235)
+        TextFN.TextColor3 = Color3.fromHex("#64ff64")
+        TextFN.Text = "ไก่ตันเคียว"
+    elseif DFFN and MNFN and YMFN and BDFN then
+        TextFN.Position = UDim2.new(0, 70, 0, 235)
+        TextFN.TextColor3 = Color3.fromHex("#64ff64")
+        TextFN.Text = "ไก่ตันคม"
+    elseif DFFN and MNFN then
+        TextFN.Position = UDim2.new(0, 50, 0, 235)
+        TextFN.TextColor3 = Color3.fromHex("#64ff64")
+        TextFN.Text = "ไก่กัง"
+    else
+        TextFN.Position = UDim2.new(0, 70, 0, 235)
+        TextFN.TextColor3 = Color3.fromHex("#ff3232")
+        TextFN.Text = "โครตเน่า"
+    end
 end
 
 spawn(function()
