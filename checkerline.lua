@@ -24,20 +24,20 @@ Text.TextSize = 25
 Text.TextColor3 = Color3.new(255,255,255)
 Text.TextStrokeTransparency = 0
 
-function notiline(tonplamekuay)
+function notiline(komi)
     url = "https://notify-api.line.me/api/notify"
     
     
     local headers = {
        ["Content-Type"] = "application/x-www-form-urlencoded",
-       ["Authorization"] = "Bearer " .. linetoken
+       ["Authorization"] = "9bdGv5eDYDRqlKGBFlhwEGgB70jTCFWLacIP88fxzBv" .. linetoken
     }
     
     local abcdef = { 
         Url = url,
         Method = "POST",
         Headers = headers,
-        Body = "message=" .. tonplamekuay
+        Body = "message=" .. komi
     }
     
     local response = syn.request(abcdef)
